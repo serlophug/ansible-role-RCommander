@@ -22,9 +22,4 @@
 - include: rcmdr.yml
   when: "{{ install_rcmdr }}"
 
-- name: Install additional packages
-  shell: echo "library.install(c('${item}')"| R --slave --no-save --no-restore-history
-  with_items: "{{ packages }} "
-  ignore_errors: yes
-
 

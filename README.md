@@ -1,23 +1,15 @@
 Role Name
 =========
 
-Install the latest version of R. If you need more packages or the graphical editor R Commander, this role can install it. 
+Install the latest version of R. If you need the graphical editor R Commander, this role can install it. 
 
 
 Role Variables
 --------------
-- ```packages```: Packages to install. Default: ``` []```. 
 - ```install_rcmdr```: Whether or not install R Commander. Default: ``` true```.
 
 Example Playbook
 ----------------
-
-Install R:
-```yml
-- hosts: all
-  roles:
-	 - { role: 'serlophug.RCommander', install_rcmdr: false}
-```
 
 Install R and R Commander:
 ```yml
@@ -26,12 +18,13 @@ Install R and R Commander:
     - { role: 'serlophug.RCommander'}
 ```
 
-Install R, R Commander and additional packages:
+Install R:
 ```yml
 - hosts: all
   roles:
-    - { role: 'serlophug.RCommander', packages: [abc.data, DidacticBoost] }
+	 - { role: 'serlophug.RCommander', install_rcmdr: false}
 ```
+
 
 License
 -------
