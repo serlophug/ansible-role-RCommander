@@ -1,0 +1,10 @@
+---
+- name: Installing requiered packages 
+  apt: r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest update_cache=yes
+  
+- name: Install R Commander
+  shell: echo "library.install(c('${item}')"| R --slave --no-save --no-restore-history
+  with_items:
+      - Rcmdr
+  ignore_errors: yes
+

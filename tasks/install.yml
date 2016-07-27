@@ -1,0 +1,26 @@
+---
+- name: Get key 
+  apt_key: keyserver=keyserver.ubuntu.com id=E084DAB9 state=present
+
+- name: Get repository
+  apt_repository: repo='ppa:marutter/rdev'
+
+- name: Update
+  apt: update_cache=yes
+
+- name: Upgrade
+  apt: upgrade=dist
+
+- name: Install R on Debian
+  apt: name=r-base state=latest update_cache=yes
+  when: ansible_os_family == "Debian"
+
+- include: rcmdr.yml
+  when: {{ install_rcmdr }}
+
+- name: Install additional packages
+  shell: echo "library.install(c('${item}')"| R --slave --no-save --no-restore-history
+  with_items: "{{ packages }} "
+  ignore_errors: yes
+
+

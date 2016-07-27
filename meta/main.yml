@@ -1,0 +1,28 @@
+galaxy_info:
+  author: Sergio López Huguet
+  description: Install R and the graphical editor R Commander 
+
+  license: GPLv2 (R), GPL-3(R Commander)  
+
+  min_ansible_version: 1.8
+
+  - name: Ubuntu
+    versions:
+    - precise
+    - quantal
+    - raring
+    - saucy
+    - trusty
+    
+  - name: Debian
+    versions:
+    - squeeze
+    - wheezy
+
+  galaxy_tags: 
+    - R
+    - R-Commander
+    - editor 
+    - mathematics
+    
+dependencies: []
