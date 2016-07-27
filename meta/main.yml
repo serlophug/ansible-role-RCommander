@@ -2,10 +2,10 @@ galaxy_info:
   author: Sergio López Huguet
   description: Install R and the graphical editor R Commander 
 
-  license: GPLv2 (R), GPL-3(R Commander)  
+  license: GPLv2 
 
   min_ansible_version: 1.8
-
+  platforms:
   - name: Ubuntu
     versions:
     - precise
