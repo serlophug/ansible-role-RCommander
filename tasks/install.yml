@@ -14,7 +14,11 @@
 - name: Install R on Debian
   apt: name=r-base state=latest update_cache=yes
   when: ansible_os_family == "Debian"
-
+  
+- name: Install R on REL
+  apt: name=epel-release,r-base,r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest update_cache=yes
+  when: ansible_os_family == "RedHat"
+  
 - include: rcmdr.yml
   when: "{{ install_rcmdr }}"
 
