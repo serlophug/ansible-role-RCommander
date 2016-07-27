@@ -6,8 +6,8 @@ Install the latest version of R. If you need more packages or the graphical edit
 
 Role Variables
 --------------
-- ```yml packages```: Packages to install. Default: ``` [ ]```. 
-- ```yml install_rcmdr```: Whether or not install R Commander. Default: ``` true```.
+- ```packages```: Packages to install. Default: ``` []```. 
+- ```install_rcmdr```: Whether or not install R Commander. Default: ``` true```.
 
 Example Playbook
 ----------------
