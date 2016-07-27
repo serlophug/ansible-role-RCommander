@@ -16,21 +16,21 @@ Install R:
 ```yml
 - hosts: all
   roles:
-	 - { role: 'serlophug.ansible-role-octave', install_rcmdr: false}
+	 - { role: 'serlophug.ansible-role-RCommander', install_rcmdr: false}
 ```
 
 Install R and R Commander:
 ```yml
 - hosts: all
   roles:
-    - { role: 'serlophug.ansible-role-octave'}
+    - { role: 'serlophug.ansible-role-RCommander'}
 ```
 
 Install R, R Commander and additional packages:
 ```yml
 - hosts: all
   roles:
-    - { role: 'serlophug.ansible-role-octave', packages: [abc.data, DidacticBoost] }
+    - { role: 'serlophug.ansible-role-RCommander', packages: [abc.data, DidacticBoost] }
 ```
 
 License
