@@ -9,10 +9,12 @@
   
 - name: Update
   apt: update_cache=yes
-
+  when: ansible_os_family == "Debian"
+  
 - name: Upgrade
   apt: upgrade=dist
-
+  when: ansible_os_family == "Debian"
+  
 - name: Install R on Debian
   apt: name=r-base state=latest update_cache=yes
   when: ansible_os_family == "Debian"
