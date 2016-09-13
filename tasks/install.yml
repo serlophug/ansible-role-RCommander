@@ -1,10 +1,12 @@
 ---
 - name: Get key 
   apt_key: keyserver=keyserver.ubuntu.com id=E084DAB9 state=present
-
+  when: ansible_os_family == "Debian"
+  
 - name: Get repository
   apt_repository: repo='ppa:marutter/rdev'
-
+  when: ansible_os_family == "Debian"
+  
 - name: Update
   apt: update_cache=yes
 
