@@ -3,10 +3,9 @@ R-Project
 
 Install the latest version of R. If you need a graphical editor, this role can install: R Commander and R Studio. 
 
-R Project:https://www.r-project.org/
-
+R Project:https://www.r-project.org/<br />
 R Studio: https://www.rstudio.com/<br />
-R Commander: http://www.rcommander.com/
+R Commander: http://www.rcommander.com/<br />
 
 Role Variables
 --------------
