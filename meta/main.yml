@@ -1,6 +1,6 @@
 galaxy_info:
   author: Sergio López Huguet
-  description: Install the latest version of R.
+  description: Install the latest version of R. If you need a graphical editor, this role can install: R Commander and R Studio.
   license: GPLv2 
 
   min_ansible_version: 1.8
@@ -20,11 +20,11 @@ galaxy_info:
 
   galaxy_tags: 
     - R
-    - R Commander
+    - R-Commander
     - statistics
     - editor 
     - mathematics
-    - R Studio
+    - R-Studio
     - Ubuntu
     - Centos
     
