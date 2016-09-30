@@ -1,5 +1,5 @@
 ---
-- name: Installing requiered packages on Debian 
+- name: Installing R Commander and dependencies on Debian 
   apt: name=r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest update_cache=yes
   when: ansible_os_family == "Debian"
 
@@ -8,8 +8,6 @@
   when: ansible_os_family == "RedHat"
   
 - name: Install R Commander
-  shell: echo "library.install(c('${item}')"| R --slave --no-save --no-restore-history
-  with_items:
-      - Rcmdr
+  shell: echo "install.packages('Rcmdr', repos='http://cran.us.r-project.org') -y -y"| R --no-save
   ignore_errors: yes
 
