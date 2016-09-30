@@ -5,7 +5,7 @@ Install the latest version of R. If you need a graphical editor, this role can i
 
 R Project:https://www.r-project.org/
 
-R Studio: https://www.rstudio.com/
+R Studio: https://www.rstudio.com/<br />
 R Commander: http://www.rcommander.com/
 
 Role Variables
