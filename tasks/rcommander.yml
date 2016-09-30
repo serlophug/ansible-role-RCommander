@@ -1,6 +1,11 @@
 ---
-- name: Installing requiered packages 
+- name: Installing requiered packages on Debian 
   apt: name=r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest update_cache=yes
+  when: ansible_os_family == "Debian"
+
+- name: Installing requiered packages on RedHat 
+  yum: name=epel-release,r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest 
+  when: ansible_os_family == "RedHat"
   
 - name: Install R Commander
   shell: echo "library.install(c('${item}')"| R --slave --no-save --no-restore-history

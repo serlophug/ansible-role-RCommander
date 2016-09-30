@@ -1,2 +1,32 @@
 ---
-- include: install.yml
+- name: Get key 
+  apt_key: keyserver=keyserver.ubuntu.com id=E084DAB9 state=present
+  when: ansible_os_family == 'Debian'
+  
+- name: Get repository
+  apt_repository: repo='ppa:marutter/rdev'
+  when: ansible_os_family == 'Debian'
+  
+- name: Update
+  apt: update_cache=yes
+  when: ansible_os_family == 'Debian'
+  
+- name: Upgrade
+  apt: upgrade=dist
+  when: ansible_os_family == 'Debian'
+  
+- name: Install R on Debian
+  apt: name=r-base state=latest update_cache=yes
+  when: ansible_os_family == 'Debian'
+  
+- name: Install R on REL
+  yum: name=http://www.nic.funet.fi/pub/mirrors/fedora.redhat.com/pub/epel/5/x86_64/epel-release-6-8.noarch.rpm state=present
+  when: ansible_os_family == 'RedHat'
+  
+- include: rcommander.yml
+  when: "{{ install_rcommander }}"
+  
+- include: rstudio.yml
+  when: "{{ install_rstudio }}"
+
+

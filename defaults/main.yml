@@ -1,2 +1,3 @@
 ---
-install_rcmdr: yes
+install_rcommander: false
+install_rstudio: false

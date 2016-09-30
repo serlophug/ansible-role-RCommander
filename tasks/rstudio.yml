@@ -1,0 +1,10 @@
+---
+- name: Install R-Studio on Debian
+  apt: deb=https://download1.rstudio.org/rstudio-0.99.903-amd64.deb 
+  when: ansible_os_family == 'Debian'    
+    
+- name: Install R-Studio on RedHat
+  yum: name=https://download1.rstudio.org/rstudio-0.99.903-x86_64.rpm state=present
+  when: ansible_os_family == 'RedHat' 
+  
+
