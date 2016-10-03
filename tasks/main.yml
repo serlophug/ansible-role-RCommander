@@ -22,6 +22,7 @@
 - name: Install R on REL (I)
   action: shell rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
   when: ansible_os_family == 'RedHat'
+  ignore_errors: true
   
 - name: Install R on REL (II)
   action: shell yum install R
