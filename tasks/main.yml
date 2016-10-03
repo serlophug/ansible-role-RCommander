@@ -19,13 +19,8 @@
   apt: name=r-base state=latest update_cache=yes
   when: ansible_os_family == 'Debian'
   
-- name: Install R on REL (I)
-  action: shell rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-  when: ansible_os_family == 'RedHat'
-  ignore_errors: true
-  
-- name: Install R on REL (II)
-  action: shell sudo yum install R -y 
+- name: Install R on REL 
+  yum: name=http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm validate_certs=no state=present update_cache=yes
   when: ansible_os_family == 'RedHat'
   ignore_errors: true
   
