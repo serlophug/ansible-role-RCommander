@@ -25,8 +25,9 @@
   ignore_errors: true
   
 - name: Install R on REL (II)
-  action: shell yum install R
+  action: shell sudo yum install R -y 
   when: ansible_os_family == 'RedHat'
+  ignore_errors: true
   
 - include: rcommander.yml
   when: "{{ install_rcommander }}"
