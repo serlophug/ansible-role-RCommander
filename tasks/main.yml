@@ -20,7 +20,7 @@
   when: ansible_os_family == 'Debian'
   
 - name: Install R on REL 
-  yum: name=name=epel-release,r-base,r-base-dev state=latest update_cache=yes
+  yum: name=name=r-base state=latest update_cache=yes
   when: ansible_os_family == 'RedHat'
   
 - include: rcommander.yml
