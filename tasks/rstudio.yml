@@ -1,6 +1,6 @@
 ---
 - name: Download R-Studio for Debian
-  get_url: url=https://download1.rstudio.org/rstudio-0.99.903-amd64.deb dest=/tmp/rstudio-0.99.903-amd64.deb force=no
+  action: shell wget https://download1.rstudio.org/rstudio-0.99.903-amd64.deb /tmp/rstudio-0.99.903-amd64.deb 
   when: ansible_os_family == 'Debian'    
 
 - name: Download R-Studio for Debian
