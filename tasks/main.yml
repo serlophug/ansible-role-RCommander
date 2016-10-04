@@ -20,7 +20,8 @@
   when: ansible_os_family == 'Debian'
   
 - name: Install R on REL 
-  yum: name=R state=present 
+  #yum: name=R state=present 
+  action: shell sudo yum install R -y
   when: ansible_os_family == 'RedHat'
   
 - include: rcommander.yml
