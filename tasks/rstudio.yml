@@ -14,7 +14,7 @@
 #  when: ansible_os_family == 'Debian'    
 
 - name: Download R-Studio for Debian
-  apt: deb=https://download1.rstudio.org/rstudio-0.99.903-amd64.deb dpkg_options='force-depends'
+  apt: deb=http://download1.rstudio.org/rstudio-0.99.903-amd64.deb dpkg_options='force-depends'
   when: ansible_os_family == 'Debian'    
 
 - name: Install R-Studio on RedHat
