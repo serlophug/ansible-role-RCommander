@@ -21,6 +21,7 @@
   
 - name: Install R on REL 
   #yum: name=R state=present 
+  # http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
   action: shell sudo yum install R -y
   when: ansible_os_family == 'RedHat'
   
