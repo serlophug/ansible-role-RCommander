@@ -3,11 +3,12 @@
   apt: name=r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest update_cache=yes
   when: ansible_os_family == "Debian"
 
-- name: Installing requiered packages on RedHat 
-  yum: name=epel-release,r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest 
-  when: ansible_os_family == "RedHat"
+#- name: Installing requiered packages on RedHat 
+#  yum: name=epel-release,r-cran-rcmdr,r-cran-rodbc,r-cran-rgl state=latest 
+#  when: ansible_os_family == "RedHat"
   
-- name: Install R Commander
-  shell: echo "install.packages('Rcmdr', repos='http://cran.us.r-project.org') -y -y"| R --no-save
+- name: Install R Commander and dependencies on Red Hat
+  shell: echo 'install.packages("Rcmdr", repos="https://cran.rediris.es/") ' | sudo R --no-save 
+  when: ansible_os_family == "RedHat"
   ignore_errors: yes
 
