@@ -8,7 +8,7 @@
 #  when: ansible_os_family == "RedHat"
   
 - name: Install R Commander and dependencies on Red Hat
-  shell: echo 'install.packages("Rcmdr", repos="https://cran.rediris.es/") ' | sudo R --no-save 
+  action: shell echo "install.packages('Rcmdr', repos='https://cran.rediris.es/')" | sudo R --no-save 
   when: ansible_os_family == "RedHat"
   ignore_errors: yes
 
