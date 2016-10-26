@@ -1,25 +1,10 @@
 ---
-#- name: Download R-Studio for Debian
-# action: shell wget https://download1.rstudio.org/rstudio-0.99.903-amd64.deb /tmp/rstudio-0.99.903-amd64.deb 
-#  when: ansible_os_family == 'Debian'    
-
-#- name:  Download R-Studio for Debian
-#  get_url:
-#    url:   https://download1.rstudio.org/rstudio-0.99.903-amd64.deb
-#    dest: /opt/rstudio-0.99.903-amd64.deb 
-#  when: ansible_os_family == 'Debian' 
-  
-#- name: Download R-Studio for Debian
-#  apt: deb=/opt/rstudio-0.99.903-amd64.deb dpkg_options='force-depends'
-#  when: ansible_os_family == 'Debian'    
-
 - name: Download R-Studio for Debian
   apt: deb=http://download1.rstudio.org/rstudio-0.99.903-amd64.deb dpkg_options='force-depends'
   when: ansible_os_family == 'Debian'    
 
 - name: Install R-Studio on RedHat
   action:  "shell yum install https://download1.rstudio.org/rstudio-0.99.903-x86_64.rpm  -y" 
-  #yum: name=https://download1.rstudio.org/rstudio-0.99.903-x86_64.rpm state=present validate_certs=no update_cache=yes
   when: ansible_os_family == 'RedHat' 
   
 
