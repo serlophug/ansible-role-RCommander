@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - serlophug.ansible-role-Rproject
+    - ansible-role-Rproject
